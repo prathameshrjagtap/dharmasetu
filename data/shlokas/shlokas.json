@@ -1,0 +1,22 @@
+[
+  {
+    "id": "bg-1-1",
+    "scripture_id": "bhagavad-gita",
+    "chapter_id": "bg-chapter-1",
+    "shloka_number": 1,
+    "sanskrit_text": "धृतराष्ट्र उवाच | धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः | मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ||१||",
+    "transliteration": "dhṛtarāṣṭra uvāca | dharma-kṣetre kuru-kṣetre samavetā yuyutsavaḥ | māmakāḥ pāṇḍavāścaiva kimakurvata sañjaya ||1||",
+    "meaning": "Dhritarashtra said: O Sanjaya, what did my sons and the sons of Pandu do after assembling on the sacred field of Kurukshetra, desiring battle?",
+    "explanation": "The Bhagavad Gita begins with Dhritarashtra asking Sanjaya about the battlefield of Kurukshetra, setting the stage for the spiritual dialogue between Krishna and Arjuna."
+  },
+  {
+    "id": "bg-2-47",
+    "scripture_id": "bhagavad-gita",
+    "chapter_id": "bg-chapter-2",
+    "shloka_number": 47,
+    "sanskrit_text": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन | मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ||४७||",
+    "transliteration": "karmaṇy-evādhikāras te mā phaleṣu kadācana | mā karma-phala-hetur bhūr mā te saṅgo 'stv akarmaṇi ||47||",
+    "meaning": "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+    "explanation": "This verse teaches Nishkama Karma — performing actions without attachment to outcomes."
+  }
+]

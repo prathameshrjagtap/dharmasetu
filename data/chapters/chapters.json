@@ -1,0 +1,23 @@
+[
+  {
+    "id": "bg-chapter-1",
+    "slug": "arjuna-vishada-yoga",
+    "scripture_id": "bhagavad-gita",
+    "name": "Arjuna Vishada Yoga",
+    "chapter_number": 1
+  },
+  {
+    "id": "bg-chapter-2",
+    "slug": "sankhya-yoga",
+    "scripture_id": "bhagavad-gita",
+    "name": "Sankhya Yoga",
+    "chapter_number": 2
+  },
+  {
+    "id": "ramayana-bala-kanda",
+    "slug": "bala-kanda",
+    "scripture_id": "ramayana",
+    "name": "Bala Kanda",
+    "chapter_number": 1
+  }
+]

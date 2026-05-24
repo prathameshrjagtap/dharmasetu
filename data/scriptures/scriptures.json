@@ -1,0 +1,15 @@
+[
+  {
+    "id": "bhagavad-gita",
+    "slug": "bhagavad-gita",
+    "name": "Bhagavad Gita",
+    "description": "A sacred dialogue between Lord Krishna and Arjuna on duty, righteousness, action, and liberation.",
+    "featured": true
+  },
+  {
+    "id": "ramayana",
+    "slug": "ramayana",
+    "name": "Ramayana",
+    "description": "One of the great epics of Sanatan Dharma narrating the life and ideals of Lord Rama."
+  }
+]
