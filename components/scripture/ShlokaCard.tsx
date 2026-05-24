@@ -16,7 +16,7 @@ export default function ShlokaCard({ shloka }: ShlokaCardProps) {
       {/* Sanskrit */}
       <div>
         <p className="text-sm font-medium text-stone-500 mb-1">Sanskrit</p>
-        <p className="text-base leading-loose text-stone-800 font-serif">
+        <p className="sanskrit-text text-base leading-loose text-stone-800">
           {shloka.sanskrit_text}
         </p>
       </div>

@@ -19,5 +19,26 @@
     "scripture_id": "ramayana",
     "name": "Bala Kanda",
     "chapter_number": 1
+  },
+  {
+    "id": "bg-chapter-3",
+    "scripture_id": "bhagavad-gita",
+    "chapter_number": 3,
+    "name": "Karma Yoga",
+    "summary": "The path of selfless action and disciplined duty."
+  },
+  {
+    "id": "bg-chapter-4",
+    "scripture_id": "bhagavad-gita",
+    "chapter_number": 4,
+    "name": "Jnana Karma Sanyasa Yoga",
+    "summary": "Knowledge, action, and the nature of divine wisdom."
+  },
+  {
+    "id": "bg-chapter-5",
+    "scripture_id": "bhagavad-gita",
+    "chapter_number": 5,
+    "name": "Karma Sanyasa Yoga",
+    "summary": "The path of renunciation through selfless action and detachment."
   }
 ]

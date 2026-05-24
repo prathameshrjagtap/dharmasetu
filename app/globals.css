@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --font-sans: sans-serif;
+  --font-devanagari: sans-serif;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -7,4 +11,9 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: var(--font-sans);
+}
+
+.sanskrit-text {
+  font-family: var(--font-devanagari);
 }
