@@ -7,6 +7,7 @@ import PageHeader from '@/components/ui/PageHeader';
 import ShlokaCard from '@/components/scripture/ShlokaCard';
 import EmptyState from '@/components/states/EmptyState';
 import ErrorState from '@/components/states/ErrorState';
+import ChapterNavigation from '@/components/scripture/ChapterNavigation';
 
 interface Props {
   params: Promise<{ scripture_id: string; chapter_id: string }>;
@@ -20,11 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const scripture = getScriptureById(scripture_id);
-  const chapters  = getChaptersByScripture(scripture_id);
-  const chapter   = chapters.find((c) => c.id === chapter_id);
+  const chapters = getChaptersByScripture(scripture_id);
+  const chapter = chapters.find((c) => c.id === chapter_id);
 
   return {
-    title:       chapter?.name ?? 'Chapter',
+    title: chapter?.name ?? 'Chapter',
     description: `Read shlokas from ${chapter?.name} of ${scripture?.name}.`,
   };
 }
@@ -47,8 +48,8 @@ export default async function ChapterDetailPage({ params }: Props) {
   }
 
   const scripture = getScriptureById(scripture_id)!;
-  const chapters  = getChaptersByScripture(scripture_id);
-  const chapter   = chapters.find((c) => c.id === chapter_id)!;
+  const chapters = getChaptersByScripture(scripture_id);
+  const chapter = chapters.find((c) => c.id === chapter_id)!;
 
   // Shlokas validated against BOTH scripture_id and chapter_id
   const shlokas = getShlokasByChapter(scripture_id, chapter_id);
@@ -80,6 +81,11 @@ export default async function ChapterDetailPage({ params }: Props) {
             ))}
           </ul>
         )}
+        <ChapterNavigation
+          scriptureId={scripture_id}
+          chapters={chapters}
+          currentChapterNumber={chapter.chapter_number}
+        />
       </SectionWrapper>
     </Container>
   );
