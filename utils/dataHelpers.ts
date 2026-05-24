@@ -97,3 +97,34 @@ export function getShlokaById(
       s.chapter_id === chapter_id
   );
 }
+
+// Get chapter by ID safely
+export function getChapterById(
+  chapter_id: string
+): Chapter | undefined {
+
+  return chapters.find(
+    (chapter) => chapter.id === chapter_id
+  );
+}
+
+// Get all shlokas for a scripture
+export function getShlokasByScripture(
+  scripture_id: string
+): ReadonlyArray<Shloka> {
+
+  if (!isValidScripture(scripture_id)) {
+    return EMPTY_SHLOKAS;
+  }
+
+  return shlokas
+    .filter(
+      (shloka) =>
+        shloka.scripture_id === scripture_id
+    )
+    .slice()
+    .sort(
+      (a, b) =>
+        a.shloka_number - b.shloka_number
+    );
+}

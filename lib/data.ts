@@ -15,3 +15,19 @@ export const chapters =
 
 export const shlokas =
   shlokasRaw as ReadonlyArray<Shloka>;
+
+export function getScriptureStats(scriptureId: string) {
+
+  const chapterCount = chapters.filter(
+    (chapter) => chapter.scripture_id === scriptureId
+  ).length;
+
+  const shlokaCount = shlokas.filter(
+    (shloka) => shloka.scripture_id === scriptureId
+  ).length;
+
+  return {
+    chapterCount,
+    shlokaCount,
+  };
+}

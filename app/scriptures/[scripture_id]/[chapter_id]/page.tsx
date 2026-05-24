@@ -6,7 +6,7 @@ import SectionWrapper from '@/components/shared/SectionWrapper';
 import PageHeader from '@/components/ui/PageHeader';
 import ShlokaCard from '@/components/scripture/ShlokaCard';
 import EmptyState from '@/components/states/EmptyState';
-import ErrorState from '@/components/states/ErrorState';
+import { notFound } from 'next/navigation';
 import ChapterNavigation from '@/components/scripture/ChapterNavigation';
 
 interface Props {
@@ -35,16 +35,7 @@ export default async function ChapterDetailPage({ params }: Props) {
 
   // Guard: validate full hierarchy before rendering anything
   if (!isValidHierarchy(scripture_id, chapter_id)) {
-    return (
-      <Container>
-        <SectionWrapper>
-          <ErrorState
-            title="Content not found"
-            description="This chapter does not exist within the selected scripture."
-          />
-        </SectionWrapper>
-      </Container>
-    );
+    notFound();
   }
 
   const scripture = getScriptureById(scripture_id)!;
