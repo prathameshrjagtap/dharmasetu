@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en" data-scroll-behavior="smooth"
       className={`${notoSans.variable} ${notoSansDevanagari.variable}`}
     >
       <body className="flex min-h-screen flex-col bg-white text-gray-900 antialiased font-sans">
