@@ -8,7 +8,7 @@ import Text from '@/components/shared/Text';
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
 
 import { createMetadata } from '@/utils/metadata';
-import { getShlokaBySlug, getScriptureById, getChaptersByScripture } from '@/utils/dataHelpers';
+import { getShlokaBySlug, getScriptureById, getChaptersByScripture, getAdjacentShlokas, } from '@/utils/dataHelpers';
 
 interface Props {
   params: Promise<{ shloka_id: string }>;
@@ -22,7 +22,7 @@ export async function generateMetadata({
 
   const shloka = getShlokaBySlug(shloka_id);
 
-  
+
 
   if (!shloka) {
     return createMetadata({
@@ -56,6 +56,12 @@ export default async function ShlokaDetailPage({
   const chapters = getChaptersByScripture(scriptureId);
   const chapter = chapters.find(
     (c) => c.id === chapterId
+  );
+
+  const { previous, next } = getAdjacentShlokas(
+    scriptureId,
+    chapterId,
+    shloka.shloka_number
   );
 
   return (
@@ -100,6 +106,40 @@ export default async function ShlokaDetailPage({
           <Text className="mt-8 text-lg leading-relaxed">
             {shloka.meaning}
           </Text>
+
+          <div className="mt-10 border-t border-stone-200 pt-8">
+
+            <h2 className="text-xl font-semibold text-stone-900">
+              Explanation
+            </h2>
+
+            <Text className="mt-4 leading-relaxed text-stone-700">
+              {shloka.explanation}
+            </Text>
+            
+          </div>
+          
+          <div className="mt-10 flex flex-wrap gap-4 border-t border-stone-200 pt-8">
+
+  {previous && (
+    <a
+      href={`/shlokas/${previous.slug}`}
+      className="rounded-xl border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-700 transition hover:border-stone-300 hover:bg-stone-50"
+    >
+      ← Previous Shloka
+    </a>
+  )}
+
+  {next && (
+    <a
+      href={`/shlokas/${next.slug}`}
+      className="rounded-xl border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-700 transition hover:border-stone-300 hover:bg-stone-50"
+    >
+      Next Shloka →
+    </a>
+  )}
+
+</div>
 
         </div>
 

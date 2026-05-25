@@ -1,6 +1,7 @@
 [
   {
     "id": "bg-1-1",
+    "slug": "bg-1-1",
     "scripture_id": "bhagavad-gita",
     "chapter_id": "bg-chapter-1",
     "shloka_number": 1,
@@ -11,6 +12,7 @@
   },
   {
     "id": "bg-2-47",
+    "slug": "bg-2-47",
     "scripture_id": "bhagavad-gita",
     "chapter_id": "bg-chapter-2",
     "shloka_number": 47,
@@ -21,6 +23,7 @@
   },
   {
     "id": "bg-3-21",
+    "slug": "bg-3-21",
     "scripture_id": "bhagavad-gita",
     "chapter_id": "bg-chapter-3",
     "shloka_number": 21,
@@ -31,6 +34,7 @@
   },
   {
     "id": "bg-4-7",
+    "slug": "bg-4-7",
     "scripture_id": "bhagavad-gita",
     "chapter_id": "bg-chapter-4",
     "shloka_number": 7,
@@ -41,6 +45,7 @@
   },
   {
     "id": "bg-5-10",
+    "slug": "bg-5-10",
     "scripture_name": "Bhagavad Gita",
     "scripture_id": "bhagavad-gita",
     "chapter_id": "bg-chapter-5",

@@ -138,3 +138,36 @@ export function getShlokasByScripture(
         a.shloka_number - b.shloka_number
     );
 }
+
+export function getAdjacentShlokas(
+  scripture_id: string,
+  chapter_id: string,
+  shloka_number: number
+) {
+
+  const chapterShlokas = shlokas
+    .filter(
+      (shloka) =>
+        shloka.scripture_id === scripture_id &&
+        shloka.chapter_id === chapter_id
+    )
+    .sort(
+      (a, b) => a.shloka_number - b.shloka_number
+    );
+
+  const currentIndex = chapterShlokas.findIndex(
+    (shloka) => shloka.shloka_number === shloka_number
+  );
+
+  return {
+    previous:
+      currentIndex > 0
+        ? chapterShlokas[currentIndex - 1]
+        : null,
+
+    next:
+      currentIndex < chapterShlokas.length - 1
+        ? chapterShlokas[currentIndex + 1]
+        : null,
+  };
+}
