@@ -1,7 +1,16 @@
+import type { Metadata } from 'next';
+
 import Container from '@/components/layout/Container';
 import SectionWrapper from '@/components/shared/SectionWrapper';
 import Heading from '@/components/shared/Heading';
 import Text from '@/components/shared/Text';
+import { createMetadata } from '@/utils/metadata';
+
+export const metadata: Metadata = createMetadata({
+  title: 'About',
+  description:
+    'Learn about DharmaSetu, its educational purpose, respectful approach, and mission to make Sanatan Dharma more accessible.',
+});
 
 export default function AboutPage() {
   return (

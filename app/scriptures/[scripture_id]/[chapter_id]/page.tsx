@@ -8,6 +8,7 @@ import ShlokaCard from '@/components/scripture/ShlokaCard';
 import EmptyState from '@/components/states/EmptyState';
 import { notFound } from 'next/navigation';
 import ChapterNavigation from '@/components/scripture/ChapterNavigation';
+import { createMetadata } from '@/utils/metadata';
 
 interface Props {
   params: Promise<{ scripture_id: string; chapter_id: string }>;
@@ -17,17 +18,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { scripture_id, chapter_id } = await params;
 
   if (!isValidHierarchy(scripture_id, chapter_id)) {
-    return { title: 'Invalid Chapter' };
+    return createMetadata({
+      title: 'Invalid Chapter',
+      description: 'The requested chapter could not be found.',
+    });
   }
 
   const scripture = getScriptureById(scripture_id);
   const chapters = getChaptersByScripture(scripture_id);
   const chapter = chapters.find((c) => c.id === chapter_id);
 
-  return {
+  return createMetadata({
     title: chapter?.name ?? 'Chapter',
     description: `Read shlokas from ${chapter?.name} of ${scripture?.name}.`,
-  };
+  });
 }
 
 export default async function ChapterDetailPage({ params }: Props) {

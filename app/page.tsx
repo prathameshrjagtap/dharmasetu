@@ -1,13 +1,21 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
 import Container from '@/components/layout/Container';
 import SectionWrapper from '@/components/shared/SectionWrapper';
 import Button from '@/components/shared/Button';
 import Heading from '@/components/shared/Heading';
 import Text from '@/components/shared/Text';
+import { createMetadata } from '@/utils/metadata';
 
 import { ROUTES } from '@/constants/routes';
 import { SITE } from '@/config/site';
+
+export const metadata: Metadata = createMetadata({
+  title: 'Home',
+  description:
+    'DharmaSetu is a structured educational platform for exploring Sanatan Dharma through scriptures, shlokas, philosophy, and learning paths.',
+});
 
 export default function HomePage() {
   return (

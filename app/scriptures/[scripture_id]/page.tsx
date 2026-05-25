@@ -10,6 +10,7 @@ import ChapterCard from '@/components/scripture/ChapterCard';
 
 import EmptyState from '@/components/states/EmptyState';
 import { notFound } from 'next/navigation';
+import { createMetadata } from '@/utils/metadata';
 
 import { getScriptureStats } from '@/lib/data';
 
@@ -25,10 +26,12 @@ export async function generateMetadata({
 
   const scripture = getScriptureById(scripture_id);
 
-  return {
-    title: scripture?.name ?? 'Scripture Not Found',
-    description: scripture?.description ?? undefined,
-  };
+  return createMetadata({
+    title: scripture ? scripture.name : 'Scripture Not Found',
+    description: 
+      scripture?.description ?? 
+      'Explore scriptures on DharmaSetu.',
+  });
 }
 
 export default async function ScriptureDetailPage({

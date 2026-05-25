@@ -1,7 +1,16 @@
+import type { Metadata } from 'next';
+
 import Container from '@/components/layout/Container';
 import SectionWrapper from '@/components/shared/SectionWrapper';
 import Heading from '@/components/shared/Heading';
 import Text from '@/components/shared/Text';
+import { createMetadata } from '@/utils/metadata';
+
+export const metadata: Metadata = createMetadata({
+  title: 'Learn',
+  description:
+    'Explore structured learning paths for Sanatan Dharma through scriptures, philosophy, and teachings.',
+});
 
 export default function LearnPage() {
   return (

@@ -1,14 +1,22 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
 import Container from '@/components/layout/Container';
 import SectionWrapper from '@/components/shared/SectionWrapper';
 import PageHeader from '@/components/ui/PageHeader';
 import Heading from '@/components/shared/Heading';
 import Text from '@/components/shared/Text';
+import { createMetadata } from '@/utils/metadata';
 
 import EmptyState from '@/components/states/EmptyState';
 
 import { shlokas, chapters, scriptures } from '@/lib/data';
+
+export const metadata: Metadata = createMetadata({
+  title: 'Shlokas',
+  description:
+    'Browse Sanskrit shlokas across scriptures and chapters on DharmaSetu.',
+});
 
 export default function ShlokasPage() {
 

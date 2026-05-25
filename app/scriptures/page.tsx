@@ -5,11 +5,12 @@ import SectionWrapper from '@/components/shared/SectionWrapper';
 import PageHeader from '@/components/ui/PageHeader';
 import ScriptureCard from '@/components/scripture/ScriptureCard';
 import EmptyState from '@/components/states/EmptyState';
+import { createMetadata } from '@/utils/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata({
   title:       'Scriptures',
   description: 'Browse the sacred scriptures of Sanatan Dharma.',
-};
+});
 
 export default function ScripturesPage() {
   return (
