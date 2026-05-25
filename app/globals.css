@@ -3,7 +3,49 @@
 :root {
   --font-sans: sans-serif;
   --font-devanagari: sans-serif;
+  /* =========================
+     DharmaSetu Core Colors
+  ========================== */
+
+  --ds-bg: #f8f5f1;
+  --ds-surface: #fcfaf7;
+
+  --ds-stone-1: #f1ebe4;
+  --ds-stone-2: #e7ddd2;
+  --ds-stone-3: #cbbba9;
+
+  --ds-text: #2f1d12;
+  --ds-text-soft: #6f5a4c;
+  --ds-text-muted: #9b8574;
+
+  --ds-saffron: #e67e22;
+  --ds-saffron-soft: #f4c27a;
+  --ds-gold: #d6b16d;
+
+  /* =========================
+     Sacred Atmosphere
+  ========================== */
+
+  --ds-glow:
+    0 10px 40px rgba(120, 90, 40, 0.05);
+
+  --ds-card-shadow:
+    0 4px 18px rgba(90, 60, 20, 0.04);
+
+  --ds-reading-shadow:
+    0 12px 50px rgba(80, 60, 20, 0.05);
+
+  /* =========================
+     Layout Rhythm
+  ========================== */
+
+  --ds-reading-width: 820px;
+  --ds-content-width: 1200px;
+
+  --ds-radius-xl: 32px;
+  --ds-radius-lg: 24px;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -12,8 +54,188 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
+
+  background:
+    radial-gradient(circle at top,
+      rgba(230, 126, 34, 0.05),
+      transparent 30%),
+    linear-gradient(to bottom,
+      var(--ds-bg),
+      #f6f2ec);
+
+  color: var(--ds-text);
+
+  min-height: 100vh;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(230, 126, 34, 0.18);
+  color: var(--ds-text);
+}
+
+.sacred-surface {
+  background: rgba(252, 250, 247, 0.92);
+
+  border: 1px solid rgba(203, 187, 169, 0.35);
+
+  box-shadow: var(--ds-card-shadow);
+
+  backdrop-filter: blur(8px);
+}
+
+.sacred-reading-panel {
+  background: rgba(252, 250, 247, 0.96);
+
+  border: 1px solid rgba(203, 187, 169, 0.3);
+
+  box-shadow: var(--ds-reading-shadow);
+
+  backdrop-filter: blur(10px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--ds-text);
+
+  letter-spacing: -0.02em;
+
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 .sanskrit-text {
+  font-family:
+    var(--font-devanagari),
+    "Noto Serif Devanagari",
+    serif;
+
+  color: #24150d;
+
+  text-rendering: optimizeLegibility;
+
+  font-feature-settings:
+    "liga",
+    "clig",
+    "kern";
+}
+
+.scripture-heading {
+  letter-spacing: -0.03em;
+
+  line-height: 0.95;
+}
+
+.sacred-divider {
+  height: 1px;
+
+  background:
+    linear-gradient(to right,
+      transparent,
+      rgba(214, 177, 109, 0.4),
+      transparent);
+}
+
+/* DharmaSetu Reading System */
+
+.reading-sanskrit {
   font-family: var(--font-devanagari);
+
+  @apply text-3xl leading-[2.8rem] tracking-[0.02em] text-stone-950 md:text-4xl md:leading-[4.5rem];
+}
+
+.reading-transliteration {
+  @apply mt-10 text-base italic leading-relaxed text-stone-600;
+}
+
+.reading-meaning {
+  @apply mt-12 text-xl leading-10 text-stone-800;
+}
+
+.reading-explanation-title {
+  @apply text-xl font-semibold tracking-wide text-stone-800;
+}
+
+.reading-explanation {
+  @apply mt-5 text-lg leading-8 text-stone-700;
+}
+
+.sacred-card {
+  background:
+    linear-gradient(to bottom,
+      rgba(252, 250, 247, 0.96),
+      rgba(248, 244, 238, 0.96));
+
+  border:
+    1px solid rgba(203, 187, 169, 0.35);
+
+  border-radius: var(--ds-radius-xl);
+
+  box-shadow: var(--ds-card-shadow);
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+
+  backdrop-filter: blur(10px);
+}
+
+.sacred-card:hover {
+  border-color: rgba(214, 177, 109, 0.45);
+
+  box-shadow:
+    0 10px 30px rgba(120, 90, 40, 0.07);
+
+  transform: translateY(-2px);
+}
+
+a,
+button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.sacred-hover {
+  transition:
+    transform 240ms ease,
+    box-shadow 240ms ease,
+    border-color 240ms ease;
+}
+
+.sacred-hover:hover {
+  transform: translateY(-2px);
+}
+
+.sacred-fade {
+  animation:
+    sacredFade 500ms ease;
+}
+
+@keyframes sacredFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

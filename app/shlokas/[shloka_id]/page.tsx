@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 
 import Container from '@/components/layout/Container';
 import SectionWrapper from '@/components/shared/SectionWrapper';
@@ -67,84 +68,120 @@ export default async function ShlokaDetailPage({
   return (
     <Container>
 
-      <SectionWrapper>
-        <Breadcrumbs
-          items={[
-            {
-              label: 'Scriptures',
-              href: '/scriptures',
-            },
-            {
-              label: scripture?.name ?? 'Scripture',
-              href: `/scriptures/${scriptureId}`,
-            },
-            {
-              label: chapter?.name ?? 'Chapter',
-              href: `/scriptures/${scriptureId}/${chapterId}`,
-            },
-            {
-              label: `Shloka ${shloka.shloka_number}`,
-            },
-          ]}
-        />
-        <PageHeader
-          title={`Shloka ${shloka.shloka_number}`}
-          description={shloka.meaning}
-        />
-
-        {/* Sanskrit */}
-        <div className="mt-10 rounded-2xl border border-stone-200 bg-white p-8">
-
-          <p className="text-2xl leading-loose text-stone-900 font-devanagari">
-            {shloka.sanskrit_text}
-          </p>
-
-          <Text className="mt-8 italic text-stone-600">
-            {shloka.transliteration}
-          </Text>
-
-          <Text className="mt-8 text-lg leading-relaxed">
-            {shloka.meaning}
-          </Text>
-
-          <div className="mt-10 border-t border-stone-200 pt-8">
-
-            <h2 className="text-xl font-semibold text-stone-900">
-              Explanation
-            </h2>
-
-            <Text className="mt-4 leading-relaxed text-stone-700">
-              {shloka.explanation}
-            </Text>
-            
+        <SectionWrapper className="py-10 md:py-14">
+          <div className="opacity-80">
+            <Breadcrumbs
+              items={[
+                {
+                  label: 'Scriptures',
+                  href: '/scriptures',
+                },
+                {
+                  label: scripture?.name ?? 'Scripture',
+                  href: `/scriptures/${scriptureId}`,
+                },
+                {
+                  label: chapter?.name ?? 'Chapter',
+                  href: `/scriptures/${scriptureId}/${chapterId}`,
+                },
+                {
+                  label: `Shloka ${shloka.shloka_number}`,
+                },
+              ]}
+            />
           </div>
-          
-          <div className="mt-10 flex flex-wrap gap-4 border-t border-stone-200 pt-8">
+          <div className="mt-6 max-w-3xl">
+            <PageHeader
+              title={`Shloka ${shloka.shloka_number}`}
+              description={shloka.meaning}
+            />
+          </div>
+          {/* Sanskrit */}
+          <div className="sacred-card sacred-fade mt-12 p-10">
 
-  {previous && (
-    <a
-      href={`/shlokas/${previous.slug}`}
-      className="rounded-xl border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-700 transition hover:border-stone-300 hover:bg-stone-50"
-    >
-      ← Previous Shloka
-    </a>
-  )}
+            <div className="mx-auto max-w-4xl">
 
-  {next && (
-    <a
-      href={`/shlokas/${next.slug}`}
-      className="rounded-xl border border-stone-200 bg-white px-5 py-3 text-sm font-medium text-stone-700 transition hover:border-stone-300 hover:bg-stone-50"
-    >
-      Next Shloka →
-    </a>
-  )}
+              <p className="sanskrit-text text-3xl leading-[2.8rem] tracking-[0.02em] md:text-4xl md:leading-[4.5rem]">
+                {shloka.sanskrit_text}
+              </p>
 
-</div>
+              <Text className="mt-10 text-base italic leading-relaxed text-stone-600">
+                {shloka.transliteration}
+              </Text>
 
-        </div>
+              <Text className="mt-12 text-xl leading-10 text-stone-800">
+                {shloka.meaning}
+              </Text>
 
-      </SectionWrapper>
+              <div className="mt-14 pt-10">
+                <div className="sacred-divider mb-10" />
 
+                <h2 className="text-xl font-semibold tracking-wide text-stone-800">
+                  Explanation
+                </h2>
+
+                <Text className="mt-5 text-lg leading-8 text-stone-700">
+                  {shloka.explanation}
+                </Text>
+
+              </div>
+
+              <div className="mt-16 flex flex-col gap-4 border-t border-stone-100 pt-10 sm:flex-row sm:items-center sm:justify-between">
+
+                {/* Previous */}
+                <div>
+                  {previous && (
+                    <Link
+                      href={`/shlokas/${previous.slug}`}
+                      className="group inline-flex items-start gap-3 rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 transition-all hover:border-stone-300 hover:bg-white"
+                    >
+                      <span className="mt-1 text-stone-400 transition-transform group-hover:-translate-x-1">
+                        ←
+                      </span>
+
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
+                          Previous
+                        </p>
+
+                        <p className="mt-1 text-sm font-medium text-stone-700">
+                          Shloka {previous.shloka_number}
+                        </p>
+                      </div>
+                    </Link>
+                  )}
+                </div>
+
+                {/* Next */}
+                <div>
+                  {next && (
+                    <Link
+                      href={`/shlokas/${next.slug}`}
+                      className="group inline-flex items-start gap-3 rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 transition-all hover:border-stone-300 hover:bg-white"
+                    >
+                      <div className="text-right">
+                        <p className="text-xs uppercase tracking-[0.2em] text-stone-400">
+                          Next
+                        </p>
+
+                        <p className="mt-1 text-sm font-medium text-stone-700">
+                          Shloka {next.shloka_number}
+                        </p>
+                      </div>
+
+                      <span className="mt-1 text-stone-400 transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </Link>
+                  )}
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </SectionWrapper>
+      
     </Container>
   );
 }
