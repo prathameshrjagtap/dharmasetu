@@ -73,7 +73,7 @@ export default function ShlokasSearchClient({
               <li key={shloka.id}>
 
                 <Link
-                  href={`/scriptures/${shloka.scripture_id}/${shloka.chapter_id}`}
+                  href={`/shlokas/${shloka.id}`}
                   className="block rounded-xl border border-stone-200 bg-white p-6 transition-colors hover:border-stone-300 hover:bg-stone-50"
                 >
 

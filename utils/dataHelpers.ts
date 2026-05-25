@@ -98,6 +98,16 @@ export function getShlokaById(
   );
 }
 
+// Get single shloka by standalone ID
+export function getShlokaBySlug(
+  shloka_id: string
+): Shloka | undefined {
+
+  return shlokas.find(
+    (s) => s.id === shloka_id
+  );
+}
+
 // Get chapter by ID safely
 export function getChapterById(
   chapter_id: string
