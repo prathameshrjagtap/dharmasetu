@@ -28,8 +28,8 @@ export async function generateMetadata({
 
   return createMetadata({
     title: scripture ? scripture.name : 'Scripture Not Found',
-    description: 
-      scripture?.description ?? 
+    description:
+      scripture?.description ??
       'Explore scriptures on DharmaSetu.',
   });
 }
@@ -56,7 +56,7 @@ export default async function ScriptureDetailPage({
   return (
     <Container>
 
-      <SectionWrapper>
+      <SectionWrapper className="sacred-fade py-12 md:py-16">
 
         <PageHeader
           title={scripture.name}
@@ -66,11 +66,11 @@ export default async function ScriptureDetailPage({
         {/* Statistics */}
         <div className="mt-6 flex flex-wrap gap-3">
 
-          <div className="rounded-lg border border-stone-200 bg-stone-50 px-4 py-2 text-sm text-stone-700">
+          <div className="sacred-surface rounded-2xl px-5 py-3 text-sm text-stone-700">
             Chapters: {stats.chapterCount}
           </div>
 
-          <div className="rounded-lg border border-stone-200 bg-stone-50 px-4 py-2 text-sm text-stone-700">
+          <div className="sacred-surface rounded-2xl px-5 py-3 text-sm text-stone-700">
             Shlokas: {stats.shlokaCount}
           </div>
 
@@ -86,7 +86,7 @@ export default async function ScriptureDetailPage({
 
         ) : (
 
-          <ul className="mt-8 flex flex-col gap-3" role="list">
+          <ul className="mt-12 mx-auto flex max-w-5xl flex-col gap-6" role="list">
 
             {chapters.map((chapter) => (
               <li key={chapter.id}>

@@ -16,55 +16,119 @@ export default function ShlokaCard({
       className="block"
     >
 
-      <article className="rounded-lg border border-stone-200 bg-white p-6 space-y-4 transition-colors hover:border-stone-300 hover:bg-stone-50">
+      <article
+        className="
+    sacred-card
+    sacred-hover
+    space-y-8
+    p-8
+  "
+      >
 
-        {/* Shloka number */}
-        <p className="text-xs font-medium text-stone-400 uppercase tracking-wide">
-          Shloka {shloka.shloka_number}
-        </p>
+        {/* Header */}
+        <div className="flex items-center justify-between">
+
+          <div
+            className="
+        sacred-surface
+        rounded-full
+        px-4
+        py-1.5
+        text-xs
+        font-medium
+        uppercase
+        tracking-[0.18em]
+        text-stone-500
+      "
+          >
+            Shloka {shloka.shloka_number}
+          </div>
+
+          <div
+            className="
+        text-sm
+        text-amber-700
+        opacity-0
+        transition-all
+        duration-200
+        group-hover:translate-x-1
+        group-hover:opacity-100
+      "
+          >
+            Read →
+          </div>
+
+        </div>
 
         {/* Sanskrit */}
         <div>
-          <p className="text-sm font-medium text-stone-500 mb-1">
-            Sanskrit
-          </p>
 
-          <p className="sanskrit-text text-base leading-loose text-stone-800">
+          <p
+            className="
+        sanskrit-text
+        text-2xl
+        leading-[2.8rem]
+        text-stone-900
+        md:text-3xl
+        md:leading-[3.8rem]
+      "
+          >
             {shloka.sanskrit_text}
           </p>
+
         </div>
 
         {/* Transliteration */}
         <div>
-          <p className="text-sm font-medium text-stone-500 mb-1">
-            Transliteration
-          </p>
 
-          <p className="text-sm text-stone-600 italic leading-relaxed">
+          <p
+            className="
+        text-base
+        italic
+        leading-relaxed
+        text-stone-500
+      "
+          >
             {shloka.transliteration}
           </p>
+
         </div>
 
         {/* Meaning */}
-        <div>
-          <p className="text-sm font-medium text-stone-500 mb-1">
-            Meaning
-          </p>
+        <div
+          className="
+      border-t
+      border-stone-100
+      pt-6
+    "
+        >
 
-          <p className="text-sm text-stone-700 leading-relaxed">
+          <p
+            className="
+        text-lg
+        leading-8
+        text-stone-700
+      "
+          >
             {shloka.meaning}
           </p>
+
         </div>
 
-        {/* Explanation */}
-        <div className="border-t border-stone-100 pt-4">
-          <p className="text-sm font-medium text-stone-500 mb-1">
-            Explanation
-          </p>
+        {/* Explanation Preview */}
+        <div>
 
-          <p className="text-sm text-stone-600 leading-relaxed">
+          <p
+            className="
+        line-clamp-3
+        text-sm
+        leading-7
+        text-stone-500
+      "
+          >
             {shloka.explanation}
           </p>
+
         </div>
 
       </article>

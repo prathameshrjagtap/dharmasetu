@@ -51,11 +51,37 @@ export default async function ChapterDetailPage({ params }: Props) {
 
   return (
     <Container>
-      <SectionWrapper>
-        {/* Breadcrumb context */}
-        <p className="mb-1 text-xs text-stone-400 uppercase tracking-wide">
-          {scripture.name} · Chapter {chapter.chapter_number}
-        </p>
+      <SectionWrapper className="sacred-fade py-12 md:py-16">
+        <div
+          className="
+    sacred-surface
+    mb-8
+    inline-flex
+    items-center
+    gap-3
+    rounded-full
+    px-5
+    py-2
+    text-sm
+    text-stone-600
+  "
+        >
+          <span className="text-amber-700">
+            ✦
+          </span>
+
+          <span>
+            {scripture.name}
+          </span>
+
+          <span className="text-stone-300">
+            /
+          </span>
+
+          <span>
+            Chapter {chapter.chapter_number}
+          </span>
+        </div>
 
         <PageHeader
           title={chapter.name}
@@ -68,7 +94,7 @@ export default async function ChapterDetailPage({ params }: Props) {
             description="Shlokas for this chapter are being added. Please check back soon."
           />
         ) : (
-          <ul className="flex flex-col gap-6" role="list">
+          <ul  className="mx-auto mt-12 flex max-w-5xl flex-col gap-8" role="list">
             {shlokas.map((shloka) => (
               <li key={shloka.id}>
                 <ShlokaCard shloka={shloka} />
@@ -76,6 +102,7 @@ export default async function ChapterDetailPage({ params }: Props) {
             ))}
           </ul>
         )}
+        <div className="sacred-divider my-16" />
         <ChapterNavigation
           scriptureId={scripture_id}
           chapters={chapters}

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Chapter } from '@/types';
 
 interface ChapterCardProps {
-  chapter:     Chapter;
+  chapter: Chapter;
   scripture_id: string;
 }
 
@@ -12,20 +12,91 @@ export default function ChapterCard({ chapter, scripture_id }: ChapterCardProps)
   return (
     <Link
       href={href}
-      className="group flex items-start gap-4 rounded-lg border border-stone-200 bg-white p-5 transition-colors hover:border-stone-300 hover:bg-stone-50"
+      className="
+      sacred-card
+      sacred-hover
+      group
+      flex
+      items-start
+      gap-5
+      p-6
+    "
     >
-      {/* Chapter number indicator */}
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-stone-100 text-xs font-semibold text-stone-600 group-hover:bg-amber-50 group-hover:text-amber-700 transition-colors">
+      {/* Chapter Number */}
+      <div
+        className="
+        flex
+        h-11
+        w-11
+        shrink-0
+        items-center
+        justify-center
+        rounded-full
+        border
+        border-amber-200/40
+        bg-gradient-to-b
+        from-amber-50
+        to-orange-50
+        text-sm
+        font-semibold
+        text-amber-800
+        shadow-sm
+      "
+      >
         {chapter.chapter_number}
-      </span>
+      </div>
 
-      <div>
-        <h3 className="text-sm font-semibold text-stone-800 group-hover:text-amber-700 transition-colors">
+      {/* Content */}
+      <div className="min-w-0 flex-1">
+
+        <h3
+          className="
+          text-lg
+          font-semibold
+          tracking-tight
+          text-stone-900
+          transition-colors
+          group-hover:text-amber-700
+        "
+        >
           {chapter.name}
         </h3>
-        <span className="mt-1 inline-block text-xs text-stone-400">
-          Chapter {chapter.chapter_number} · View shlokas →
-        </span>
+
+        <p
+          className="
+          mt-2
+          text-sm
+          leading-relaxed
+          text-stone-500
+        "
+        >
+          Explore chapter teachings, meanings, and verse flow.
+        </p>
+
+        <div
+          className="
+          mt-4
+          inline-flex
+          items-center
+          gap-2
+          text-sm
+          font-medium
+          text-amber-700
+        "
+        >
+          Enter Chapter
+
+          <span
+            className="
+            transition-transform
+            duration-200
+            group-hover:translate-x-1
+          "
+          >
+            →
+          </span>
+        </div>
+
       </div>
     </Link>
   );
