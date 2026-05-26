@@ -9,9 +9,9 @@ interface ContainerProps {
 }
 
 const sizes: Record<Size, string> = {
-  narrow: 'max-w-2xl',
-  default: 'max-w-4xl',
-  wide: 'max-w-6xl',
+  narrow: 'max-w-3xl',
+  default: 'max-w-7xl',
+  wide: 'max-w-[1400px]',
 };
 
 export default function Container({
