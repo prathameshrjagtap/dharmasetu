@@ -7,7 +7,7 @@ interface ChapterCardProps {
 }
 
 export default function ChapterCard({ chapter, scripture_id }: ChapterCardProps) {
-  const href = `/scriptures/${scripture_id}/${chapter.id}`;
+  const href = `/scriptures/${scripture_id}/${chapter.slug}`;
 
   return (
     <Link

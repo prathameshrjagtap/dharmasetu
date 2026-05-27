@@ -3,42 +3,48 @@
     "id": "bg-chapter-1",
     "slug": "arjuna-vishada-yoga",
     "scripture_id": "bhagavad-gita",
+    "chapter_number": 1,
     "name": "Arjuna Vishada Yoga",
-    "chapter_number": 1
+    "summary": "Arjuna experiences sorrow, emotional conflict, and moral confusion before the Kurukshetra war begins."
   },
   {
     "id": "bg-chapter-2",
     "slug": "sankhya-yoga",
     "scripture_id": "bhagavad-gita",
+    "chapter_number": 2,
     "name": "Sankhya Yoga",
-    "chapter_number": 2
+    "summary": "Lord Krishna introduces the teachings of self-knowledge, duty, discipline, and spiritual wisdom."
+  },
+  {
+    "id": "bg-chapter-3",
+    "slug": "karma-yoga",
+    "scripture_id": "bhagavad-gita",
+    "chapter_number": 3,
+    "name": "Karma Yoga",
+    "summary": "The path of selfless action, disciplined duty, and performing work without attachment to results."
+  },
+  {
+    "id": "bg-chapter-4",
+    "slug": "jnana-karma-sanyasa-yoga",
+    "scripture_id": "bhagavad-gita",
+    "chapter_number": 4,
+    "name": "Jnana Karma Sanyasa Yoga",
+    "summary": "Krishna explains divine knowledge, spiritual wisdom, and the deeper meaning of action and renunciation."
+  },
+  {
+    "id": "bg-chapter-5",
+    "slug": "karma-sanyasa-yoga",
+    "scripture_id": "bhagavad-gita",
+    "chapter_number": 5,
+    "name": "Karma Sanyasa Yoga",
+    "summary": "The relationship between renunciation, detached action, inner peace, and spiritual liberation."
   },
   {
     "id": "ramayana-bala-kanda",
     "slug": "bala-kanda",
     "scripture_id": "ramayana",
+    "chapter_number": 1,
     "name": "Bala Kanda",
-    "chapter_number": 1
-  },
-  {
-    "id": "bg-chapter-3",
-    "scripture_id": "bhagavad-gita",
-    "chapter_number": 3,
-    "name": "Karma Yoga",
-    "summary": "The path of selfless action and disciplined duty."
-  },
-  {
-    "id": "bg-chapter-4",
-    "scripture_id": "bhagavad-gita",
-    "chapter_number": 4,
-    "name": "Jnana Karma Sanyasa Yoga",
-    "summary": "Knowledge, action, and the nature of divine wisdom."
-  },
-  {
-    "id": "bg-chapter-5",
-    "scripture_id": "bhagavad-gita",
-    "chapter_number": 5,
-    "name": "Karma Sanyasa Yoga",
-    "summary": "The path of renunciation through selfless action and detachment."
+    "summary": "The early life of Shri Rama, his education, virtues, and the foundational events of the Ramayana."
   }
 ]

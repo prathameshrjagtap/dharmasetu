@@ -16,7 +16,7 @@ export function doesChapterBelongToScripture(
 ): boolean {
   return chapters.some(
     (c) =>
-      c.id === chapter_id &&
+      c.slug === chapter_id &&
       c.scripture_id === scripture_id
   );
 }

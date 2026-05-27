@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const scripture = getScriptureById(scripture_id);
   const chapters = getChaptersByScripture(scripture_id);
-  const chapter = chapters.find((c) => c.id === chapter_id);
+  const chapter = chapters.find((c) => c.slug === chapter_id);
 
   return createMetadata({
     title: chapter?.name ?? 'Chapter',
@@ -44,7 +44,7 @@ export default async function ChapterDetailPage({ params }: Props) {
 
   const scripture = getScriptureById(scripture_id)!;
   const chapters = getChaptersByScripture(scripture_id);
-  const chapter = chapters.find((c) => c.id === chapter_id)!;
+  const chapter = chapters.find((c) => c.slug === chapter_id)!;
 
   // Shlokas validated against BOTH scripture_id and chapter_id
   const shlokas = getShlokasByChapter(scripture_id, chapter_id);

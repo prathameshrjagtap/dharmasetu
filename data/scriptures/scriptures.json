@@ -4,12 +4,38 @@
     "slug": "bhagavad-gita",
     "name": "Bhagavad Gita",
     "description": "A sacred dialogue between Lord Krishna and Arjuna on duty, righteousness, action, and liberation.",
+    "icon": "ॐ",
+    "color": "amber",
     "featured": true
   },
+
   {
     "id": "ramayana",
     "slug": "ramayana",
     "name": "Ramayana",
-    "description": "One of the great epics of Sanatan Dharma narrating the life and ideals of Lord Rama."
+    "description": "One of the great epics of Sanatan Dharma narrating the life and ideals of Lord Rama.",
+    "icon": "✦",
+    "color": "orange",
+    "featured": true
+  },
+
+  {
+    "id": "upanishads",
+    "slug": "upanishads",
+    "name": "Upanishads",
+    "description": "Philosophical teachings exploring consciousness, reality, and the nature of the self.",
+    "icon": "☸",
+    "color": "stone",
+    "featured": true
+  },
+
+  {
+    "id": "mahabharata",
+    "slug": "mahabharata",
+    "name": "Mahabharata",
+    "description": "An epic exploration of dharma, ethics, governance, and human nature.",
+    "icon": "⚔",
+    "color": "yellow",
+    "featured": true
   }
 ]

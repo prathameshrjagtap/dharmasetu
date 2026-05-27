@@ -12,6 +12,8 @@ import { createMetadata } from '@/utils/metadata';
 import { ROUTES } from '@/constants/routes';
 import { SITE } from '@/config/site';
 
+import scriptures from '@/data/scriptures/scriptures.json';
+
 export const metadata: Metadata = createMetadata({
   title: 'Home',
   description:
@@ -152,109 +154,73 @@ export default function HomePage() {
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
 
-            {/* Bhagavad Gita */}
-            <div className="sacred-card sacred-hover p-8 transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:bg-white hover:shadow-xl">
+            {scriptures.map((scripture) => {
 
-              <div className="space-y-5">
+              const iconMap: Record<string, string> = {
+                'bhagavad-gita': 'ॐ',
+                ramayana: '✦',
+                upanishads: '☸',
+                mahabharata: '⚔',
+              };
 
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-2xl text-amber-700">
-                  ॐ
-                </div>
+              const bgMap: Record<string, string> = {
+                'bhagavad-gita': 'bg-amber-50 text-amber-700',
+                ramayana: 'bg-orange-50 text-orange-700',
+                upanishads: 'bg-stone-100 text-stone-700',
+                mahabharata: 'bg-yellow-50 text-yellow-700',
+              };
 
-                <Heading as="h3">
-                  Bhagavad Gita
-                </Heading>
-
-                <Text
-                  size="sm"
-                  className="leading-7"
+              return (
+                <Link
+                  key={scripture.id}
+                  href={`${ROUTES.SCRIPTURES}/${scripture.slug}`}
+                  className="
+                    sacred-card
+                    sacred-hover
+                    group
+                    p-8
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:border-stone-300
+                    hover:bg-white
+                    hover:shadow-xl
+                  "
                 >
-                  Timeless teachings on duty,
-                  self-realization, discipline,
-                  and spiritual wisdom.
-                </Text>
 
-              </div>
+                  <div className="space-y-5">
 
-            </div>
+                    <div
+                      className={`
+                        flex
+                        h-14
+                        w-14
+                        items-center
+                        justify-center
+                        rounded-2xl
+                        text-2xl
+                        ${bgMap[scripture.slug] ?? 'bg-stone-100 text-stone-700'}
+                      `}
+                    >
+                      {iconMap[scripture.slug] ?? '📖'}
+                    </div>
 
-            {/* Ramayana */}
-            <div className="sacred-card sacred-hover p-8 transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:bg-white hover:shadow-xl">
+                    <Heading as="h3">
+                      {scripture.name}
+                    </Heading>
 
-              <div className="space-y-5">
+                    <Text
+                      size="sm"
+                      className="leading-7"
+                    >
+                      {scripture.description}
+                    </Text>
 
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 text-2xl text-orange-700">
-                  ✦
-                </div>
+                  </div>
 
-                <Heading as="h3">
-                  Ramayana
-                </Heading>
-
-                <Text
-                  size="sm"
-                  className="leading-7"
-                >
-                  Learn the journey of Shri Rama,
-                  devotion, dharma, sacrifice,
-                  and righteous living.
-                </Text>
-
-              </div>
-
-            </div>
-
-            {/* Upanishads */}
-            <div className="sacred-card sacred-hover p-8 transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:bg-white hover:shadow-xl">
-
-              <div className="space-y-5">
-
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-stone-100 text-2xl text-stone-700">
-                  ☸
-                </div>
-
-                <Heading as="h3">
-                  Upanishads
-                </Heading>
-
-                <Text
-                  size="sm"
-                  className="leading-7"
-                >
-                  Explore deep philosophical inquiry
-                  into consciousness, reality,
-                  and the nature of the self.
-                </Text>
-
-              </div>
-
-            </div>
-
-            {/* Mahabharata */}
-            <div className="sacred-card sacred-hover p-8 transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:bg-white hover:shadow-xl">
-
-              <div className="space-y-5">
-
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-50 text-2xl text-yellow-700">
-                  ⚔
-                </div>
-
-                <Heading as="h3">
-                  Mahabharata
-                </Heading>
-
-                <Text
-                  size="sm"
-                  className="leading-7"
-                >
-                  Understand ethics, conflict,
-                  governance, and human nature
-                  through epic narratives.
-                </Text>
-
-              </div>
-
-            </div>
+                </Link>
+              );
+            })}
 
           </div>
 
