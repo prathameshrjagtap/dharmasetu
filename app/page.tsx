@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <SectionWrapper className="sacred-fade overflow-hidden py-16 sm:py-20 lg:py-24">
+      <SectionWrapper className="sacred-fade overflow-hidden pt-10 pb-8 sm:pt-14 sm:pb-10 lg:pt-16 lg:pb-12">
         <Container size="wide">
 
           <div className="mx-auto max-w-5xl text-center">
@@ -84,7 +84,7 @@ export default function HomePage() {
               className="
                 mx-auto
                 mt-8
-                max-w-3xl
+                max-w-2xl
                 text-base
                 leading-8
                 text-stone-600
@@ -120,6 +120,224 @@ export default function HomePage() {
           </div>
 
         </Container>
+      </SectionWrapper>
+
+      {/* Featured Scriptures */}
+      <SectionWrapper className="border-y border-stone-200/50 bg-stone-50/70">
+
+        <Container>
+
+          <div className="mx-auto max-w-3xl text-center">
+
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-700">
+              Scriptures
+            </p>
+
+            <Heading
+              as="h2"
+              className="mt-4 text-3xl sm:text-4xl"
+            >
+              Explore Sacred Knowledge
+            </Heading>
+
+            <Text
+              className="mt-5 text-lg leading-8 text-stone-600"
+            >
+              Begin exploring some of the most influential scriptures
+              and philosophical texts of Sanatan Dharma through
+              structured learning and contextual understanding.
+            </Text>
+
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+            {/* Bhagavad Gita */}
+            <div className="sacred-card sacred-hover p-8 transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:bg-white hover:shadow-xl">
+
+              <div className="space-y-5">
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 text-2xl text-amber-700">
+                  ॐ
+                </div>
+
+                <Heading as="h3">
+                  Bhagavad Gita
+                </Heading>
+
+                <Text
+                  size="sm"
+                  className="leading-7"
+                >
+                  Timeless teachings on duty,
+                  self-realization, discipline,
+                  and spiritual wisdom.
+                </Text>
+
+              </div>
+
+            </div>
+
+            {/* Ramayana */}
+            <div className="sacred-card sacred-hover p-8 transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:bg-white hover:shadow-xl">
+
+              <div className="space-y-5">
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 text-2xl text-orange-700">
+                  ✦
+                </div>
+
+                <Heading as="h3">
+                  Ramayana
+                </Heading>
+
+                <Text
+                  size="sm"
+                  className="leading-7"
+                >
+                  Learn the journey of Shri Rama,
+                  devotion, dharma, sacrifice,
+                  and righteous living.
+                </Text>
+
+              </div>
+
+            </div>
+
+            {/* Upanishads */}
+            <div className="sacred-card sacred-hover p-8 transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:bg-white hover:shadow-xl">
+
+              <div className="space-y-5">
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-stone-100 text-2xl text-stone-700">
+                  ☸
+                </div>
+
+                <Heading as="h3">
+                  Upanishads
+                </Heading>
+
+                <Text
+                  size="sm"
+                  className="leading-7"
+                >
+                  Explore deep philosophical inquiry
+                  into consciousness, reality,
+                  and the nature of the self.
+                </Text>
+
+              </div>
+
+            </div>
+
+            {/* Mahabharata */}
+            <div className="sacred-card sacred-hover p-8 transition-all duration-300 hover:-translate-y-1 hover:border-stone-300 hover:bg-white hover:shadow-xl">
+
+              <div className="space-y-5">
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-50 text-2xl text-yellow-700">
+                  ⚔
+                </div>
+
+                <Heading as="h3">
+                  Mahabharata
+                </Heading>
+
+                <Text
+                  size="sm"
+                  className="leading-7"
+                >
+                  Understand ethics, conflict,
+                  governance, and human nature
+                  through epic narratives.
+                </Text>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </Container>
+
+      </SectionWrapper>
+
+      {/* Featured Shloka */}
+      <SectionWrapper className="sacred-fade border-y border-stone-200/50">
+
+        <Container size="wide">
+
+          <div className="sacred-reading-panel mx-auto max-w-5xl rounded-[36px] px-8 py-14 sm:px-14 sm:py-20">
+
+            <div className="text-center">
+
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-700">
+                Featured Shloka
+              </p>
+
+              <Heading
+                as="h2"
+                className="mt-5"
+              >
+                Bhagavad Gita 2.47
+              </Heading>
+
+            </div>
+
+            {/* Sanskrit */}
+            <div className="mx-auto mt-14 max-w-4xl text-center">
+
+              <p className="reading-sanskrit">
+                कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।
+                <br />
+                मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥
+              </p>
+
+            </div>
+
+            {/* Transliteration */}
+            <div className="mx-auto max-w-3xl">
+
+              <p className="reading-transliteration text-center">
+                karmaṇy-evādhikāras te
+                mā phaleṣu kadācana
+                <br />
+                mā karma-phala-hetur bhūr
+                mā te saṅgo ’stv akarmaṇi
+              </p>
+
+            </div>
+
+            {/* Meaning */}
+            <div className="mx-auto mt-14 max-w-3xl text-center">
+
+              <Text
+                size="lg"
+                className="text-stone-700"
+              >
+                You have a right to perform your prescribed duties,
+                but you are not entitled to the fruits of your actions.
+                Never consider yourself the cause of the results,
+                and never be attached to inaction.
+              </Text>
+
+            </div>
+
+            {/* CTA */}
+            <div className="mt-14 flex justify-center">
+
+              <Link href={ROUTES.SCRIPTURES}>
+                <Button>
+                  Explore More Shlokas
+                </Button>
+              </Link>
+
+            </div>
+
+          </div>
+
+        </Container>
+
       </SectionWrapper>
 
       {/* Mission Section */}
@@ -223,6 +441,142 @@ export default function HomePage() {
           </div>
 
         </Container>
+      </SectionWrapper>
+
+      {/* Learning Paths */}
+      <SectionWrapper className="bg-stone-50/60 border-y border-stone-100">
+
+        <Container>
+
+          <div className="text-center">
+
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-700">
+              Learning Paths
+            </p>
+
+            <Heading
+              as="h2"
+              className="mt-4"
+            >
+              Learn Step-by-Step
+            </Heading>
+
+            <Text
+              className="mx-auto mt-5 max-w-2xl"
+            >
+              DharmaSetu is designed to help learners
+              progress gradually through structured,
+              beginner-friendly educational journeys.
+            </Text>
+
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-4">
+
+            {/* Beginner */}
+            <div className="sacred-card p-7">
+
+              <p className="text-xs uppercase tracking-[0.2em] text-amber-700">
+                Level 1
+              </p>
+
+              <Heading
+                as="h3"
+                className="mt-4"
+              >
+                Beginner Foundations
+              </Heading>
+
+              <Text
+                size="sm"
+                className="mt-4"
+              >
+                Understand the core concepts,
+                values, and structure of
+                Sanatan Dharma.
+              </Text>
+
+            </div>
+
+            {/* Scriptures */}
+            <div className="sacred-card p-7">
+
+              <p className="text-xs uppercase tracking-[0.2em] text-amber-700">
+                Level 2
+              </p>
+
+              <Heading
+                as="h3"
+                className="mt-4"
+              >
+                Scripture Exploration
+              </Heading>
+
+              <Text
+                size="sm"
+                className="mt-4"
+              >
+                Study shlokas, chapters,
+                and teachings from important
+                scriptures.
+              </Text>
+
+            </div>
+
+            {/* Philosophy */}
+            <div className="sacred-card p-7">
+
+              <p className="text-xs uppercase tracking-[0.2em] text-amber-700">
+                Level 3
+              </p>
+
+              <Heading
+                as="h3"
+                className="mt-4"
+              >
+                Philosophy & Thought
+              </Heading>
+
+              <Text
+                size="sm"
+                className="mt-4"
+              >
+                Explore karma, dharma,
+                consciousness, yoga,
+                and spiritual philosophy.
+              </Text>
+
+            </div>
+
+            {/* Sanskrit */}
+            <div className="sacred-card p-7">
+
+              <p className="text-xs uppercase tracking-[0.2em] text-amber-700">
+                Level 4
+              </p>
+
+              <Heading
+                as="h3"
+                className="mt-4"
+              >
+                Sanskrit & Interpretation
+              </Heading>
+
+              <Text
+                size="sm"
+                className="mt-4"
+              >
+                Learn pronunciation,
+                transliteration, and
+                contextual understanding.
+              </Text>
+
+            </div>
+
+          </div>
+
+        </Container>
+
       </SectionWrapper>
 
       {/* Quick Navigation */}

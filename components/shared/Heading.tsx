@@ -9,39 +9,32 @@ interface HeadingProps {
 }
 
 const styles: Record<Level, string> = {
+
   h1: `
-    text-4xl
-    sm:text-5xl
-    lg:text-6xl
-    font-bold
-    leading-[1.05]
-    tracking-tight
+    font-semibold
+    tracking-[-0.04em]
+    leading-[0.98]
     text-stone-950
   `,
 
   h2: `
-    text-3xl
-    sm:text-4xl
-    font-bold
+    font-semibold
+    tracking-[-0.03em]
     leading-tight
-    tracking-tight
     text-stone-900
   `,
 
   h3: `
-    text-xl
-    sm:text-2xl
     font-semibold
+    tracking-[-0.02em]
     leading-snug
-    tracking-tight
-    text-stone-900
+    text-stone-800
   `,
 
   h4: `
-    text-lg
-    font-semibold
+    font-medium
     leading-snug
-    text-stone-800
+    text-stone-700
   `,
 };
 
@@ -50,6 +43,7 @@ export default function Heading({
   children,
   className,
 }: HeadingProps) {
+
   return (
     <Tag
       className={cn(

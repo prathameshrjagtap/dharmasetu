@@ -1,34 +1,51 @@
 import { cn } from '@/lib/cn';
 
-type Size = 'sm' | 'base' | 'lg';
+type Size =
+  | 'sm'
+  | 'base'
+  | 'lg';
 
 interface TextProps {
   children: React.ReactNode;
-  size?: Size;
-  muted?: boolean;
   className?: string;
+  size?: Size;
 }
 
-const sizes: Record<Size, string> = {
-  sm: 'text-sm',
-  base: 'text-base',
-  lg: 'text-lg',
+const styles: Record<Size, string> = {
+
+  sm: `
+    text-sm
+    leading-7
+    text-stone-600
+  `,
+
+  base: `
+    text-[1.02rem]
+    leading-8
+    text-stone-700
+  `,
+
+  lg: `
+    text-lg
+    leading-9
+    text-stone-600
+  `,
 };
 
 export default function Text({
   children,
-  size = 'base',
-  muted = false,
   className,
+  size = 'base',
 }: TextProps) {
+
   return (
     <p
       className={cn(
-        sizes[size],
-        'leading-relaxed',
-        muted
-          ? 'text-stone-500'
-          : 'text-stone-700',
+        `
+        text-pretty
+        antialiased
+      `,
+        styles[size],
         className
       )}
     >

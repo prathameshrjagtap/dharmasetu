@@ -57,11 +57,16 @@ body {
 
   background:
     radial-gradient(circle at top,
-      rgba(230, 126, 34, 0.05),
-      transparent 30%),
+      rgba(230, 126, 34, 0.07),
+      transparent 28%),
+
+    radial-gradient(circle at bottom right,
+      rgba(214, 177, 109, 0.05),
+      transparent 26%),
+
     linear-gradient(to bottom,
-      var(--ds-bg),
-      #f6f2ec);
+      #faf7f2,
+      #f6f1ea);
 
   color: var(--ds-text);
 
@@ -70,6 +75,10 @@ body {
   text-rendering: optimizeLegibility;
 
   -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
+
+  letter-spacing: -0.01em;
 
   overflow-x: hidden;
 }
@@ -90,13 +99,37 @@ body {
 }
 
 .sacred-reading-panel {
-  background: rgba(252, 250, 247, 0.96);
+  background:
+    linear-gradient(to bottom,
+      rgba(255, 252, 248, 0.95),
+      rgba(248, 244, 238, 0.94));
 
-  border: 1px solid rgba(203, 187, 169, 0.3);
+  border:
+    1px solid rgba(214, 177, 109, 0.18);
 
-  box-shadow: var(--ds-reading-shadow);
+  box-shadow:
+    0 20px 60px rgba(80, 60, 20, 0.07);
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.sacred-reading-panel::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top,
+      rgba(230, 126, 34, 0.06),
+      transparent 42%);
+
+  pointer-events: none;
 }
 
 h1,
@@ -114,6 +147,7 @@ h6 {
 
 p {
   text-wrap: pretty;
+  line-height: 1.9;
 }
 
 .sanskrit-text {
@@ -175,31 +209,45 @@ p {
 .sacred-card {
   background:
     linear-gradient(to bottom,
-      rgba(252, 250, 247, 0.96),
-      rgba(248, 244, 238, 0.96));
+      rgba(255, 252, 248, 0.96),
+      rgba(248, 244, 238, 0.94));
 
   border:
-    1px solid rgba(203, 187, 169, 0.35);
+    1px solid rgba(203, 187, 169, 0.28);
 
   border-radius: var(--ds-radius-xl);
 
-  box-shadow: var(--ds-card-shadow);
+  box-shadow:
+    0 6px 24px rgba(90, 60, 20, 0.04),
+    0 1px 0 rgba(255, 255, 255, 0.5) inset;
 
   transition:
-    transform 220ms ease,
-    border-color 220ms ease,
-    box-shadow 220ms ease;
+    transform 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease;
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
+
+  position: relative;
+
+  overflow: hidden;
 }
 
 .sacred-card:hover {
-  border-color: rgba(214, 177, 109, 0.45);
+  border-color:
+    rgba(214, 177, 109, 0.42);
+
+  background:
+    linear-gradient(to bottom,
+      rgba(255, 253, 249, 0.98),
+      rgba(249, 245, 239, 0.98));
 
   box-shadow:
-    0 10px 30px rgba(120, 90, 40, 0.07);
+    0 18px 50px rgba(120, 90, 40, 0.08);
 
-  transform: translateY(-2px);
+  transform:
+    translateY(-4px);
 }
 
 a,
