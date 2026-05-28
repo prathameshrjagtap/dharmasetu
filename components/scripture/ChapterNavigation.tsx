@@ -32,7 +32,7 @@ export default function ChapterNavigation({
       <div className="min-h-[40px]">
         {previousChapter ? (
           <Link
-            href={`/scriptures/${scriptureId}/${previousChapter.id}`}
+            href={`/scriptures/${scriptureId}/${previousChapter.slug}`}
             className="text-sm font-medium text-amber-700 transition-colors hover:text-amber-800"
           >
             ← Chapter {previousChapter.chapter_number}
@@ -58,7 +58,7 @@ export default function ChapterNavigation({
       <div className="min-h-[40px] text-left sm:text-right">
         {nextChapter ? (
           <Link
-            href={`/scriptures/${scriptureId}/${nextChapter.id}`}
+            href={`/scriptures/${scriptureId}/${nextChapter.slug}`}
             className="text-sm font-medium text-amber-700 transition-colors hover:text-amber-800"
           >
             Chapter {nextChapter.chapter_number} →
