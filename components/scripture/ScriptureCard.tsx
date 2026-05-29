@@ -6,7 +6,7 @@ interface ScriptureCardProps {
 }
 
 export default function ScriptureCard({ scripture }: ScriptureCardProps) {
-  const href = `/scriptures/${scripture.id}`;
+  const href = `/scriptures/${scripture.slug}`;
 
   return (
     <Link
